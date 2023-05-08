@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&family=Roboto&display=swap');
+/*************************ROOT VARIABLES************************/
+:root {
+--color-primary: #7388ec;
+--color-danger: #ff7782;
+--color-success: #41f1b6;
+--color-warning: #ffbb55;
+--color-white: #202528;
+--color-info-dark: #7d8da1;
+--color-info-white: #dce1eb;
+--color-dark: #edeffd;
+--color-light: rgba(0, 0, 0, 0.4);
+--color-primary-variant: #111e88;
+--color-dark-variant: #a3bdcc;
+--color-background: #181a1e;
+
+--card-border-radius: 2rem;
+--border-radius-1: 0.4rem;
+--border-radius-2: 0.8rem;
+--border-radius-3: 1.2rem;
+
+--card-padding: 1.8rem;
+--padding-1: 1.2rem;
+
+--box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/****************************DARK THEME VARIABLES*********************************/
+.dark-theme-variables{
+    --color-background: #f6f6f9;
+    --color-white:#fff;
+    --color-dark: #363949;
+    --color-dark-variant: #677483;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --box-shadow: 0 2rem 3rem var(--color-light);  
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
+
+.container{
+    display: grid;
+    width: 98%;
+    margin: 0 auto;
+    gap: 1.8rem;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+h6{
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: normal;
+    margin-top: 16px;
+}
+
+h5{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: normal;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.page-title{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.fa-grip{
+    float: left;
+    padding-left: 30px;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.pricing{
+    display: block;
+    text-align: center;
+}
+
+.pricing .table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pricing h6{
+    margin-bottom: 6rem;
+}
+
+.pricing .basic{
+    width: 230px;
+    height: 100%;
+    border: 1px solid #b9bcf6;
+    border-radius: 20px;
+}
+
+.pricing .basic h3{
+    text-align: center;
+    font-weight: 300;
+    padding: 30px 0;
+    background-color: #03232b;
+    transition: all ease 0.6s;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.pricing .basic:hover h3{
+    background-image: linear-gradient(to right, #535cf1, #a147e4);
+    color: #fff;
+}
+
+.pricing .standard h3{
+    background-image: linear-gradient(to right, #535cf1, #a147e4);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    color: #fff;
+}
+
+.pricing .basic .price{
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.pricing .basic .price .sign{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    vertical-align: middle
+}
+
+.pricing .basic .price .currency{
+    font-size: 23px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    line-height: 50px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.pricing .basic ul li{
+    border-top: 1px solid #ccc;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    color: #7f8c8d;
+}
+
+.pricing .basic ul li i{
+    padding-right: 5px;
+    color: #535cf1;
+}
+
+.pricing .header-btn{
+    margin: 2rem auto;
+    width: 170px;
+}
+
+.pricing .header-btn a{
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: normal;
+    font-size: 13px;
+    border-radius: 50px;
+    outline: medium none;
+    border: 1px solid #2ecc71;
+    color: #ffffff;
+}
+
+.pricing .basic:hover .header-btn a{
+    background-image: linear-gradient(to right, #535cf1, #a147e4);
+    color: #fff;
+    border: 1px solid #2ecc71;
+}
+
+.pricing .standard .header-btn a{
+    background-image: linear-gradient(to right, #535cf1, #a147e4);
+    color: #fff;
+    border: 1px solid #2ecc71;
+}
+
+/***************************MEDIA QUERY*****************************/
+
+@media only screen and (max-width: 946px){
+    .pricing .table{
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .pricing .basic{
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 774px){
+    .pricing h3{
+        font-size: 33px;
+    }
+
+    .pricing h6{
+        font-size: 16px;
+    }
+
+    .pricing .table{
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+}

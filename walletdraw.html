@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitwelle Trades | Wallet</title>
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/svg+xml">
+
+    <link rel="stylesheet" href="wall-css/usdtdeposit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="coin-container text-center">
+        <p class="page-title"> <a href="wallet.php"><i class="fa fa-arrow-left"></i></a></p>
+
+        <div class="amount-box text-center">
+            <img src="images/favicon.png">
+            <p>Withdraw Crypto</p> 
+        </div>
+
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected">Select CryptoCurrency</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <a href="btcdraw.html"><li>Bitcoin (BTC)</li></a>
+                <a href="bnbdraw.html"><li>BNB (BNB)</li></a>
+                <a href="dogedraw.html"><li>Dogecoin (DOGE)</li></a>
+                <a href="ethdraw.html"><li>Ethereum (ETH)</li></a>
+                <a href="litedraw.html"><li>Litecoin (LITE)</li></a>
+                <a href="polydraw.html"><li>Polygon (POLY)</li></a>
+                <a href="soldraw.html"><li>Solana (SOL)</li></a>
+                <a href="usdtdraw.html"><li>Tether (USDT)</li></a>
+                <a href="trondraw.html"><li>Tron (TRON)</li></a>
+            </ul>
+            
+        </div>
+
+        <div class="footer">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <p>Copyright BITWELLE TRADING</p>
+                </div>
+            </div>
+        </div>
+
+      
+
+        
+    </div>
+
+    <script>
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown =>{
+            const select = dropdown.querySelector('.select');
+            const caret = dropdown.querySelector('.caret');
+            const menu = dropdown.querySelector('.menu');
+            const options = dropdown.querySelectorAll('.menu li');
+            const selected = dropdown.querySelector('.selected');
+
+            select.addEventListener('click', () => {
+                select.classList.toggle('select-clicked');
+                caret.classList.toggle('caret-rotate');
+                menu.classList.toggle('menu-open');
+            });
+
+            options.forEach(option => {
+                option.addEventListener('click', () =>{
+                    select.innerText = option.innerText;
+                    select.classList.remove('select-clicked');
+                    caret.classList.remove('caret-rotate');
+                    menu.classList.remove('menu-open');
+
+                    options.forEach(option => {
+                        option.classList.remove('active');
+                    });
+
+                    option.classList.add('active');
+                });
+            });
+        });
+
+</script>
+    
+</body>
+</html>
